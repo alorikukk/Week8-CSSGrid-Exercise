@@ -1,0 +1,104 @@
+:root {
+    --my-padding: 0.4rem;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container * {
+    align-items: center;
+    display: grid;
+    padding: var(--my-padding);
+}
+
+.container {
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    font-family: "Bubblegum Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(4, fr1);
+    grid-template-rows: 0.3fr 2fr 0.9fr 1.1fr 0.5fr;
+    grid-template-areas: 
+    "header menu menu menu"
+    "hero hero hero hero"
+    "main main image image"
+    "main main extra extra"
+    "banner banner banner banner"
+    ;
+}
+
+.header {
+    background-color: black;
+    grid-area: header;
+}
+
+.menu {
+    background-color: red;
+    grid-area: menu;
+}
+
+.hero {
+    background-color: darkblue;
+    grid-area: hero;
+}
+
+main {
+    background-color: blue;
+    grid-area: main;
+}
+
+.image{
+    background-color: chartreuse;
+    grid-area: image;
+}
+
+.extra {
+    background-color: aqua;
+    grid-area: extra;
+}
+
+.banner{
+    background-color: burlywood;
+    grid-area: banner;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 0.7fr 1fr 0.5fr;
+        grid-template-rows: 0.3fr 1.5fr 2fr 1fr 0.7fr;
+        grid-template-areas: 
+        "header header header"
+        "hero hero hero"
+        "menu main main"
+        "menu banner banner"
+        "menu extra image"
+        ;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1.5fr 2fr 1.2fr 1.2fr 1.2fr;
+        grid-template-areas:
+        "header"
+        "menu"
+        "hero"
+        "main"
+        "banner"
+        "extra"
+        "image"
+        ;
+    }
+}
+
